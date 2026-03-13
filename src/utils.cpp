@@ -53,9 +53,12 @@ bool isPlayerInsideBasicSpikeShape(PlayerObject* player, GameObject* gObj)
     gObjContSize.width *= gObj->getScaleX();
     gObjContSize.height *= gObj->getScaleY();
     float gObjRotation = deg2rad(gObj->getRotation());
-
-    //TODO: this assumes the player is always in big mode
+    
     float playerSize = 14;
+    if (player->m_vehicleSize < 1.0f)
+    {
+        playerSize = 7;
+    }
     cocos2d::CCRect playerRect(playerPos.x - playerSize, playerPos.y - playerSize, playerSize * 2, playerSize * 2);
 
     cocos2d::CCPoint spikeTopPointUnmoved(0, gObjContSize.height / 2);
