@@ -12,6 +12,9 @@
 	"developer": "Tyegurr",
 	"tags": ["joke", "gameplay"],
 	"description": "Is GD possible with ACCURATE HITBOXES?",
+	"links": {
+		"source": "https://github.com/Tyegurr/AccurateHitboxesGD"
+	},
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
 	}
