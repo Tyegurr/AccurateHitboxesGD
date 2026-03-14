@@ -34,6 +34,10 @@ bool pointIsInTriangle(cocos2d::CCPoint pt, cocos2d::CCPoint v1, cocos2d::CCPoin
 
     return !(has_neg && has_pos);
 }
+float getDistanceAsNumber(CCPoint pt1, CCPoint pt2)
+{
+    return sqrtf(powf(pt2.x - pt1.x, 2.f) + powf(pt2.y - pt1.y, 2.f));
+}
 
 
 bool isGameObjectASpike(GameObject* gObj)
@@ -54,11 +58,7 @@ bool isPlayerInsideBasicSpikeShape(PlayerObject* player, GameObject* gObj)
     gObjContSize.height *= gObj->getScaleY();
     float gObjRotation = deg2rad(gObj->getRotation());
     
-    float playerSize = 14;
-    if (player->m_vehicleSize < 1.0f)
-    {
-        playerSize = 7;
-    }
+    float playerSize = 14 * player->m_vehicleSize;
     cocos2d::CCRect playerRect(playerPos.x - playerSize, playerPos.y - playerSize, playerSize * 2, playerSize * 2);
 
     cocos2d::CCPoint spikeTopPointUnmoved(0, gObjContSize.height / 2);
@@ -102,9 +102,14 @@ bool isPlayerInsideSawShape(PlayerObject* player, GameObject* gObj)
     cocos2d::CCSize gObjContSize = gObj->getContentSize();
 
     float averageSize = (gObjContSize.width + gObjContSize.height) / 2;
-    float distFromSaw = gObjPos.getDistance(playerPos);
+    averageSize *= gObj->getScale();
+    
+    // add player size
+    averageSize += 32.f * player->m_vehicleSize;
 
-    return distFromSaw <= (averageSize / 1.5f);
+    float distFromSaw = getDistanceAsNumber(playerPos, gObjPos);
+
+    return distFromSaw <= (averageSize / 2.f);
 }
 
 

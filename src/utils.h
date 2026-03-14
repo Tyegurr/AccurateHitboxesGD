@@ -8,6 +8,7 @@ using namespace cocos2d;
 
 bool isPointInsideRect(cocos2d::CCPoint pt, cocos2d::CCRect rect);
 float deg2rad(float degrees);
+float getDistanceAsNumber(CCPoint pt1, CCPoint pt2);
 
 float signPt(cocos2d::CCPoint p1, cocos2d::CCPoint p2, cocos2d::CCPoint p3);
 bool pointIsInTriangle(cocos2d::CCPoint pt, cocos2d::CCPoint v1, cocos2d::CCPoint v2, cocos2d::CCPoint v3);
