@@ -13,6 +13,17 @@ float deg2rad(float degrees)
 {
     return degrees * (PI / 180.f);
 }
+float getTruePlayerSize(PlayerObject* player)
+{
+    float baseSize = 32.0f;
+    if (player->m_isDart)
+    {
+        baseSize *= 0.28f;
+    }
+
+    baseSize *= player->m_vehicleSize;
+    return baseSize;
+}
 
 // stay in school or this could be you
 // thanks https://stackoverflow.com/a/2049593
@@ -58,7 +69,7 @@ bool isPlayerInsideBasicSpikeShape(PlayerObject* player, GameObject* gObj)
     gObjContSize.height *= gObj->getScaleY();
     float gObjRotation = deg2rad(gObj->getRotation());
     
-    float playerSize = 14 * player->m_vehicleSize;
+    float playerSize = getTruePlayerSize(player) / 2.208f;
     cocos2d::CCRect playerRect(playerPos.x - playerSize, playerPos.y - playerSize, playerSize * 2, playerSize * 2);
 
     cocos2d::CCPoint spikeTopPointUnmoved(0, gObjContSize.height / 2);
@@ -105,7 +116,7 @@ bool isPlayerInsideSawShape(PlayerObject* player, GameObject* gObj)
     averageSize *= gObj->getScale();
     
     // add player size
-    averageSize += 32.f * player->m_vehicleSize;
+    averageSize += getTruePlayerSize(player);
 
     float distFromSaw = getDistanceAsNumber(playerPos, gObjPos);
 

@@ -1,3 +1,7 @@
+# V1.0.4
+- Fixed wave hitboxes
+- Added missing spike ID (39)
+
 # V1.0.3
 - Made saw hitboxes more accurate
 

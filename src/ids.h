@@ -2,7 +2,7 @@
 #include <set>
 
 inline std::set<int> basicSpikeIDs = {
-    8, 216, 103, 392, 216, 217, 218, 458, 144, 205, 145, 459,
+    8, 39, 216, 103, 392, 216, 217, 218, 458, 144, 205, 145, 459,
     177, 178, 179
 };
 inline std::set<int> allSawIDs = {
