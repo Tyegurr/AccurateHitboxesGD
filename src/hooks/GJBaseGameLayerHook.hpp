@@ -33,6 +33,11 @@ class $modify(GJBaseGameLayerHook, GJBaseGameLayer)
         {
             GameObject* gObj = objects->at(i);
 
+            // GameObject::m_isActivated seems to represent if an object is toggled
+            bool objHasBeenToggled = !gObj->m_isActivated;
+            if (objHasBeenToggled)
+                continue;
+
             CCPoint playerPos = object->getPosition();
             CCPoint objectPos = gObj->getPosition();
             CCSize objectContentSize = gObj->getContentSize();

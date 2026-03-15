@@ -1,3 +1,6 @@
+# V1.0.5
+- Fixed toggled objects killing the player
+
 # V1.0.4
 - Fixed wave hitboxes
 - Added missing spike ID (39)
