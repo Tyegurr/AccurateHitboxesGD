@@ -63,7 +63,7 @@ bool isGameObjectASaw(GameObject* gObj)
 bool isPlayerInsideBasicSpikeShape(PlayerObject* player, GameObject* gObj)
 {
     cocos2d::CCPoint playerPos = player->getPosition();
-    cocos2d::CCPoint gObjPos = gObj->getPosition();
+    cocos2d::CCPoint gObjPos = gObj->getUnmodifiedPosition();
     cocos2d::CCSize gObjContSize = gObj->getContentSize();
     gObjContSize.width *= gObj->getScaleX();
     gObjContSize.height *= gObj->getScaleY();
@@ -109,7 +109,7 @@ bool isPlayerInsideBasicSpikeShape(PlayerObject* player, GameObject* gObj)
 bool isPlayerInsideSawShape(PlayerObject* player, GameObject* gObj)
 {
     cocos2d::CCPoint playerPos = player->getPosition();
-    cocos2d::CCPoint gObjPos = gObj->getPosition();
+    cocos2d::CCPoint gObjPos = gObj->getUnmodifiedPosition();
     cocos2d::CCSize gObjContSize = gObj->getContentSize();
 
     float averageSize = (gObjContSize.width + gObjContSize.height) / 2;

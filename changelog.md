@@ -1,3 +1,9 @@
+# V1.1.0
+- Added a setting for toggling the mod off without having to restart the game
+- Fixed a bug where in levels like Dash, you could die to recently deactivated hazards
+- Fixed a bug where going through a mirror portal would cause you to die to hazards near you
+- Fixed typo in v1.0.2 changelog
+
 # V1.0.4
 - Fixed wave hitboxes
 - Added missing spike ID (39)
@@ -6,7 +12,7 @@
 - Made saw hitboxes more accurate
 
 # V1.0.2
-- Aadded 2 missing saw IDs (Identical to 2 OTHER saw IDs...)
+- Added 2 missing saw IDs (Identical to 2 OTHER saw IDs...)
 
 # V1.0.1
 - Added mini mode support

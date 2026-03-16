@@ -8,7 +8,7 @@
 	},
 	"id": "tyegurr.accurate-hitboxes",
 	"name": "Accurate Hitboxes",
-	"version": "1.0.4",
+	"version": "1.1.0",
 	"developer": "Tyegurr",
 	"tags": ["joke", "gameplay"],
 	"description": "Is GD possible with ACCURATE HITBOXES?",
@@ -17,5 +17,13 @@
 	},
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
+	},
+	"settings": {
+		"mod-enabled": {
+			"type": "bool",
+			"name": "Mod enabled",
+			"description": "Toggle the mod on/off without having to restart your game",
+			"default": true
+		}
 	}
 }

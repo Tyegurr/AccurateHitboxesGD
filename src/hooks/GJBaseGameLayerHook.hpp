@@ -4,6 +4,7 @@
 #include <Geode/modify/GJBaseGameLayer.hpp>
 #include "../ids.h"
 #include "../utils.h"
+#include "../GlobalSettings.h"
 using namespace geode::prelude;
 
 // small hitbox offset to account for laggy-ness ish
@@ -29,9 +30,13 @@ class $modify(GJBaseGameLayerHook, GJBaseGameLayer)
     void collisionCheckObjects(PlayerObject* object, gd::vector<GameObject*>* objects, int objectCount, float dt) {
         GJBaseGameLayer::collisionCheckObjects(object, objects, objectCount, dt);
         
+        if (GlobalSettings::isModEnabled == false) return;
+
         for (int i = 0; i < objectCount; i++)
         {
             GameObject* gObj = objects->at(i);
+
+            if (gObj->m_isActivated == false) continue;
 
             CCPoint playerPos = object->getPosition();
             CCPoint objectPos = gObj->getPosition();
