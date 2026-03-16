@@ -15,6 +15,8 @@ class $modify(GJBaseGameLayerHook, GJBaseGameLayer)
     void updateDebugDraw() {
         GJBaseGameLayer::updateDebugDraw();
 
+        if (GlobalSettings::isModEnabled == false) return;
+
         for (int i = 0; i < m_activeObjectsCount; i++)
         {
             GameObject* gObj = m_activeObjects.at(i);

@@ -1,3 +1,6 @@
+# V1.1.1
+- Fixed a bug where the visuals for accurate hitboxes would still be shown with the mod disabled
+
 # V1.1.0
 - Added a setting for toggling the mod off without having to restart the game
 - Fixed a bug where in levels like Dash, you could die to recently deactivated hazards
