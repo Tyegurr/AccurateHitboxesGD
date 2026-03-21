@@ -1,3 +1,8 @@
+# V1.1.2
+- Fixed saw hitbox innacuracy
+- Added missing saw ID 98
+- Added discrd community link
+
 # V1.1.1
 - Fixed a bug where the visuals for accurate hitboxes would still be shown with the mod disabled
 

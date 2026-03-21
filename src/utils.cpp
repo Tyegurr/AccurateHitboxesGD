@@ -114,13 +114,16 @@ bool isPlayerInsideSawShape(PlayerObject* player, GameObject* gObj)
 
     float averageSize = (gObjContSize.width + gObjContSize.height) / 2;
     averageSize *= gObj->getScale();
-    
-    // add player size
-    averageSize += getTruePlayerSize(player);
+    averageSize /= 2.f;
 
-    float distFromSaw = getDistanceAsNumber(playerPos, gObjPos);
+    float playerSize = getTruePlayerSize(player) / 2.208f;
+    cocos2d::CCRect playerRect(playerPos.x - playerSize, playerPos.y - playerSize, playerSize * 2, playerSize * 2);
+    cocos2d::CCPoint playerBottomRight(playerRect.origin.x + playerRect.size.width, playerRect.origin.y + playerRect.size.height);
+    cocos2d::CCPoint playerTopLeft(playerRect.origin.x, playerRect.origin.y);
+    cocos2d::CCPoint playerBottomLeft(playerRect.origin.x, playerRect.origin.y + playerRect.size.height);
+    cocos2d::CCPoint playerTopRight(playerRect.origin.x + playerRect.size.width, playerRect.origin.y);
 
-    return distFromSaw <= (averageSize / 2.f);
+    return getDistanceAsNumber(playerBottomRight, gObjPos) <= averageSize || getDistanceAsNumber(playerTopLeft, gObjPos) <= averageSize || getDistanceAsNumber(playerBottomLeft, gObjPos) <= averageSize || getDistanceAsNumber(playerTopRight, gObjPos) <= averageSize;
 }
 
 
