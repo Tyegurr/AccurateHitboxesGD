@@ -18,6 +18,7 @@ bool isGameObjectASaw(GameObject* gObj);
 
 bool isPlayerInsideBasicSpikeShape(PlayerObject* player, GameObject* gObj);
 bool isPlayerInsideSawShape(PlayerObject* player, GameObject* gObj);
+void isPlayerInsideComplexShape(PlayerObject* player, GameObject* gObj, CCPoint* verts); // TODO: impl
 
 
 // debug draw functions

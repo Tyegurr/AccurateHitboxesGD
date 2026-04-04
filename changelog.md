@@ -1,3 +1,7 @@
+# V1.2.0
+- No longer april fools (sad)
+- Saw hitbox visual fix
+
 # V1.1.3
 - April fools hahaha
 

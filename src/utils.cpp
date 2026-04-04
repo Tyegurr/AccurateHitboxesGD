@@ -114,7 +114,7 @@ bool isPlayerInsideSawShape(PlayerObject* player, GameObject* gObj)
 
     float averageSize = (gObjContSize.width + gObjContSize.height) / 2;
     averageSize *= gObj->getScale();
-    averageSize /= 2.f;
+    averageSize /= 2.08f;
 
     float playerSize = getTruePlayerSize(player) / 2.208f;
     cocos2d::CCRect playerRect(playerPos.x - playerSize, playerPos.y - playerSize, playerSize * 2, playerSize * 2);
@@ -163,6 +163,8 @@ void drawSawHitboxFor(GameObject* gObj, CCDrawNode* drawNode)
     cocos2d::CCPoint gObjPos = gObj->getPosition();
     cocos2d::CCSize gObjContSize = gObj->getContentSize();
     float averageSize = (gObjContSize.width + gObjContSize.height) / 2;
+    averageSize *= gObj->getScale();
+    averageSize /= 1.04f;
 
     drawNode->drawCircle(gObjPos, averageSize / 2, { 1.f, 0.f, 0.f, 0.2f }, kDrawThickness, { 1.f, 0.f, 0.f, 1.f }, 16);
 }
